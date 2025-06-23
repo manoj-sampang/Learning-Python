@@ -14,28 +14,26 @@ while(True):
     if(s == '5'):
         print("Exiting...")
         sys.exit()
-    if s in ('1','2','3','4'):
+    elif s in ('1','2','3','4'):
         try:
             x,y = float(input("Enter first value: ")),float(input("Enter second value: "))
         except ValueError:
+            print("Invalid Input")
             continue
-    if(s == '1'):
-        s = calculator.add(x,y)
-        print(f"Ans: {s}")
-    elif(s == '2'):
-        s = calculator.sub(x,y)
-        print(f"Ans: {s}")
-    elif(s == '3'):
-        s = calculator.mul(x,y)
-        print(f"Ans: {s}")
-    elif(s == '4'):
         try:
-            s = calculator.div(x,y)
-            print(f"Ans: {s}")
+            if(s == '1'):
+                ans = calculator.add(x,y)
+            elif(s == '2'):
+                ans = calculator.sub(x,y)
+            elif(s == '3'):
+                ans = calculator.mul(x,y)
+            elif(s == '4'):
+                ans = calculator.div(x,y)
+            print(f"Ans->: {ans}")
         except ZeroDivisionError:
             print("Cant be divided by zero")
             continue
-    
+        
     else:
-        print("Invalid Number")
+        print("Invalid Number!!!!!")
 
